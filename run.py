@@ -17,8 +17,17 @@ def fibonacci(entry):
         count += 1
     return sequence[index - 1]
 
-result = fibonacci("1 2 5")
-print(result)
+
+def run():
+    input_string = input("Enter the first 2 steps and the index response as a string seperated by spaces (1 2 5): ")
+    if len(input_string) != 5 or input_string[1] != ' ' or input_string[0].isnumeric() == False or input_string[2].isnumeric() == False or input_string[4].isnumeric() == False:
+        print("Incorrect input")
+        run()
+    result = fibonacci(input_string)
+    print(f"Returned: {result}")
+
+run()
+
 
 """
 Working with a fibonacci within python was a treat.
