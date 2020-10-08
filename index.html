@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>Task 1 - Fibonacci Sequence</h2>
+
+    <p id="result"></p>
+
+    <script>
+        // Takes String input, splits by space and parses to int
+        function fibIndex(string) {
+            let splitStr = string.split(" ");
+            let numA = parseInt(splitStr[0])
+            let numB = parseInt(splitStr[1])
+            let index = parseInt(splitStr[2])
+            const sequence = [numA, numB];
+            // Runs fib sequence for the amount of times until it returns the index given
+            for (var i = 2; i < index; i++) {
+                sequence.push(sequence[i - 1] + sequence[i - 2]);
+            }
+            return sequence[index - 1];
+        }
+        var returnedIndex = fibIndex("1 2 5");
+        document.getElementById("result").innerHTML = returnedIndex;
+
+        /* 
+        I enjoyed this task! However I did get confused as numbers are 0 indexed so I completed the task as
+        if you intended the 3rd parameter to be the n-th element of the sequence rather than the actual index.
+        I will also point out here that I have Dyslexia which effects to how I consume infomation and tasks.
+        To the best of my skills I have completed the tasks to how I understand them, with commenting displaying my logic
+        */
+    </script>
+
+</body>
+
+</html>
