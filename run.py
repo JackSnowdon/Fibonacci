@@ -15,15 +15,16 @@ def fibonacci(entry):
         sequence.append(nth)
         a, b = b, nth
         count += 1
-    return sequence[index - 1]
+    return sequence, sequence[index - 1]
 
 
 def run():
     input_string = input("Enter the first 2 steps and the index response as a string seperated by spaces (1 2 5): ")
-    if len(input_string) != 5 or input_string[1] != ' ' or input_string[0].isnumeric() == False or input_string[2].isnumeric() == False or input_string[4].isnumeric() == False:
-        print("Incorrect input")
+    if len(input_string) != 5:
+        print("Input wrong length")
         run()
-    result = fibonacci(input_string)
+    sequence, result = fibonacci(input_string)
+    print(f"Sequence: {sequence}")
     print(f"Returned: {result}")
 
 run()
